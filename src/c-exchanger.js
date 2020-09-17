@@ -1,3 +1,4 @@
+import $ from "jquery";
 export default class currencyConvert {
   static async conversionRate() {
     try {
@@ -11,5 +12,21 @@ export default class currencyConvert {
     } catch (error) {
       return error.message;
     }
+  }
+  static async getCurrencyValues(response) {
+    if (response.ok) {
+      $("#amountafterconversion").text(
+        `The current rates are as follows ${response.conversion_rates}`
+      );
+    } else {
+      $("#amountafterconversion").text(
+        `An error occured - ${response.message}`
+      );
+    }
+  }
+  static async getConversionObject() {
+    currencyConvert.conversionRate().then((response) => {
+      return response;
+    });
   }
 }
