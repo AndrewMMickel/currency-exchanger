@@ -3,7 +3,7 @@ export default class currencyConvert {
   static async conversionRate() {
     try {
       const response = await fetch(
-        `https://v6.exchangerate-api.com/v6/${process.env.API_KEY}/latest/USD`
+        `https://v6.exchangerate-api.com/v6/${process.env.CONVERTER_API_KEY}/latest/USD`
       );
       if (!response.ok) {
         throw Error(response.statusText);
