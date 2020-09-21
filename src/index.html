@@ -7,6 +7,33 @@
   <link href="https://fonts.googleapis.com/css2?family=Lora:wght@600&display=swap" rel="stylesheet">
 </head>
 <body>
-    
+      <p class='display-4 padthebody'>Currency Conversion Made Easy  </p>
+      <hr>
+      <div class='padthebody'>
+        <p class='text-right'>Instructions: <em>Input USD on the left, hit the convert button below to return current exchange rate.</em></p>
+        <form>
+          <div class="form-group">
+            <div class="form-group">
+              <label for="conversionamount">Starting Amount in US Dollars:</label>
+              <input type="text"
+                class="form-control" name="conversionamount" id="" aria-describedby="helpId" placeholder="">
+              <small id="helpId" class="form-text text-muted">Make sure you enter this amount in USD.</small>
+            </div>
+            <label for="newcurrency">Final Amount in Target Currencies:</label>
+            <select class="form-control form-control-sm" name="newcurrency" id="newcurrency">
+              <option value="AUD">Australian Dollars</option>
+              <option value="EUR">Euros</option>
+              <option value="GBP">British Pounds</option>
+              <option value="CAD">Canadian Dollars</option>
+              <option value="PKR">Pakistani Rupees</option>
+              <option value="HUF">Hungarian Forint<s/option>
+            </select>
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+        <div class="row justify-content-center" id='amountafterconversion'>
+        </div>
+      </div>
+  </div>
 </body>
 </html>

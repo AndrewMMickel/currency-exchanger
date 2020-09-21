@@ -1,0 +1,11 @@
+body {
+    font-family: "Lora", serif;
+    background-color: #fff8e7;
+    color: #5c5a57;
+  }
+  
+  .padthebody {
+    margin-left: 8%;
+    margin-right: 4%;
+    text-align: right;
+  }
