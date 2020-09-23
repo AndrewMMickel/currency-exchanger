@@ -35,9 +35,6 @@ export default class currencyConvert {
     } else if ($("#newcurrency").val() === "PKR") {
       let selectedcurrency = this.rates.conversion_rates.PKR;
       return selectedcurrency;
-    } else if ($("#newcurrency").val() === "PKR") {
-      let selectedcurrency = this.rates.conversion_rates.PKR;
-      return selectedcurrency;
     }
   }
   calculateAndPrintFinal(currencyvalueparsed) {
