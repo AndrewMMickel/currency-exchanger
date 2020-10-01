@@ -12,13 +12,11 @@ _A currency converter app. It will take a given dollar amount from USD and conve
 
 *Clone root directory into a folder.
 
-*Open Git BASH terminal for that folder. In git BASH terminal for run the "npm install" command
+*Open Git BASH terminal for that folder. In git BASH terminal run `npm install`
 
 *Obtain an API Key from https://www.exchangerate-api.com/
 
 *create a .env file, then load your api key into a .env file using the name API_KEY. It should look like API_KEY = {Key goes here}
-
-*make sure that .env is called in .gitignore
 
 *run npm start to launch a live development server.
 

@@ -5,6 +5,11 @@ export default class currencyConvert {
     this.rates = {};
   }
   async conversionRate() {
+    console.log(!process.env.API_KEY);
+    if (!process.env.API_KEY) {
+      alert("Please create an enviromental variable and store your API key");
+      return;
+    }
     return new Promise(function (resolve, reject) {
       let apicall = new XMLHttpRequest();
       const apiurl = `https://v6.exchangerate-api.com/v6/${process.env.API_KEY}/latest/USD`;
