@@ -10,13 +10,15 @@ _A currency converter app. It will take a given dollar amount from USD and conve
 
 ## Setup/Installation Requirements
 
-*Clone root directory into testing environment.
+*Clone root directory into a folder.
 
-*Obtain API Key from https://www.exchangerate-api.com/
+*Open Git BASH terminal for that folder. In git BASH terminal for run the "npm install" command
 
-*Load api key into environmental variables using name API_Key.
+*Obtain an API Key from https://www.exchangerate-api.com/
 
-*Install necessary node modules in package.json
+*create a .env file, then load your api key into a .env file using the name API_KEY. It should look like API_KEY = {Key goes here}
+
+*make sure that .env is called in .gitignore
 
 *run npm start to launch a live development server.
 

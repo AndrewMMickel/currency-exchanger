@@ -7,7 +7,7 @@ export default class currencyConvert {
   async conversionRate() {
     return new Promise(function (resolve, reject) {
       let apicall = new XMLHttpRequest();
-      const apiurl = `https://v6.exchangerate-api.com/v6/${process.env.CONVERTER_API_KEY}/latest/USD`;
+      const apiurl = `https://v6.exchangerate-api.com/v6/${process.env.API_KEY}/latest/USD`;
       apicall.onload = function () {
         if (this.status === 200) {
           return resolve(JSON.parse(apicall.response));
