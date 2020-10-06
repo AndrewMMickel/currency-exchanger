@@ -14,13 +14,13 @@
         <form>
           <div class="form-group">
             <div class="form-group">
-              <label for="conversionamount">Starting Amount in US Dollars:</label>
-              <input type="text"
-                class="form-control" name="conversionamount" id="conversionamount" aria-describedby="helpId" placeholder="">
+              <label for="conversionAmount">Starting Amount in US Dollars:</label>
+              <input type="number"
+                class="form-control" name="conversionAmount" id="conversionAmount" aria-describedby="helpId" placeholder="">
               <small id="helpId" class="form-text text-muted">Make sure you enter this amount in USD.</small>
             </div>
-            <label for="newcurrency">Final Amount in Target Currencies:</label>
-            <select class="form-control form-control-sm" name="newcurrency" id="newcurrency">
+            <label for="newCurrency">Final Amount in Target Currencies:</label>
+            <select class="form-control form-control-sm" name="newCurrency" id="newCurrency">
               <option value="AUD">Australian Dollars</option>
               <option value="EUR">Euros</option>
               <option value="GBP">British Pounds</option>
@@ -30,7 +30,9 @@
           </div>
           <button type="submit" class="btn btn-primary">Submit</button>
         </form>
-        <div class="row justify-content-center" id='amountafterconversion'>
+        <div class="row justify-content-center" id='amountAfterConversion'>
+        </div>
+        <div class="showErrors" color>
         </div>
       </div>
   </div>

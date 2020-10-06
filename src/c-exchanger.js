@@ -7,7 +7,7 @@ export default class currencyConvert {
   async conversionRate() {
     console.log(!process.env.API_KEY);
     if (!process.env.API_KEY) {
-      alert("Please create an enviromental variable and store your API key");
+      alert("Please create an environmental variable and store your API key");
       return;
     }
     return new Promise(function (resolve, reject) {
@@ -17,6 +17,7 @@ export default class currencyConvert {
         if (this.status === 200) {
           return resolve(JSON.parse(apicall.response));
         } else {
+
           reject(apicall.response);
         }
       };
@@ -25,27 +26,32 @@ export default class currencyConvert {
     });
   }
   getCurrencyValues() {
-    if ($("#newcurrency").val() === "AUD") {
+    if (this.rates.result === "error") {
+      $(".showErrors").text(`There was an error with a type of ${this.rates["error-type"]}`).show();
+      $("#amountAfterConversion").hide();
+    } else if ($("#newCurrency").val() === "AUD") {
       let selectedcurrency = this.rates.conversion_rates.AUD;
       return selectedcurrency;
-    } else if ($("#newcurrency").val() === "EUR") {
+    } else if ($("#newCurrency").val() === "EUR") {
       let selectedcurrency = this.rates.conversion_rates.EUR;
       return selectedcurrency;
-    } else if ($("#newcurrency").val() === "GBP") {
+    } else if ($("#newCurrency").val() === "GBP") {
       let selectedcurrency = this.rates.conversion_rates.GBP;
       return selectedcurrency;
-    } else if ($("#newcurrency").val() === "CAD") {
+    } else if ($("#newCurrency").val() === "CAD") {
       let selectedcurrency = this.rates.conversion_rates.CAD;
       return selectedcurrency;
-    } else if ($("#newcurrency").val() === "PKR") {
+    } else if ($("#newCurrency").val() === "PKR") {
       let selectedcurrency = this.rates.conversion_rates.PKR;
       return selectedcurrency;
     }
   }
-  calculateAndPrintFinal(currencyvalueparsed) {
-    let amount = $("#conversionamount").val();
-    let conversionrate = currencyvalueparsed;
-    let convertedamount = conversionrate * amount;
-    return `The initial amount was ${amount}.  The conversion rate is ${conversionrate}. The amount after conversion is ${convertedamount}`;
+  calculateAndPrintFinal(currencyValueParsed) {
+    let amount = $("#conversionAmount").val();
+    let conversionRate = currencyValueParsed;
+    let convertedAmount = conversionRate * amount;
+    return `The initial amount was ${amount}.  The conversion rate is ${conversionRate}. The amount after conversion is ${convertedAmount}`;
   }
 }
+
+//this.status

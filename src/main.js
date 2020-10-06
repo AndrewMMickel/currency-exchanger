@@ -6,14 +6,23 @@ import currencyConvert from "./c-exchanger.js";
 
 $(document).ready(function () {
   $(":submit").click(async function (event) {
-    let conversion = new currencyConvert();
-    conversion.amount = $("#conversionamount").val();
     event.preventDefault();
-    let currentrate = await conversion.conversionRate();
-    conversion.rates = currentrate;
-    let rateselected = conversion.getCurrencyValues();
-    $("#amountafterconversion").text(
-      conversion.calculateAndPrintFinal(rateselected)
-    );
+    let conversion = new currencyConvert();
+    let userInput = $("#conversionAmount").val();
+    if (userInput < 0) {
+      $("#amountAfterConversion").hide();
+      $(".showErrors").text("Please input a non-negative number").show();
+      return;
+    } else {
+      $(".showErrors").hide();
+      conversion.amount = $("#conversionAmount").val();
+      let currentRate = await conversion.conversionRate();
+
+      conversion.rates = currentRate;
+      let rateSelected = conversion.getCurrencyValues();
+      $("#amountAfterConversion").text(
+        conversion.calculateAndPrintFinal(rateSelected)
+      ).show();
+    }
   });
 });
