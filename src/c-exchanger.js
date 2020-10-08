@@ -1,13 +1,12 @@
-import $ from "jquery";
+import $, { type } from "jquery";
 export default class currencyConvert {
   constructor() {
     this.amount = 0;
     this.rates = {};
   }
   async conversionRate() {
-    console.log(!process.env.API_KEY);
     if (!process.env.API_KEY) {
-      alert("Please create an environmental variable and store your API key");
+      $(".showErrors").text("Please create an environmental variable and store your API key");
       return;
     }
     return new Promise(function (resolve, reject) {
@@ -17,7 +16,7 @@ export default class currencyConvert {
         if (this.status === 200) {
           return resolve(JSON.parse(apicall.response));
         } else {
-
+          $(".showErrors").text(`Your API call responded with an ${this.status["error-type"]} error`);
           reject(apicall.response);
         }
       };
@@ -27,7 +26,7 @@ export default class currencyConvert {
   }
   getCurrencyValues() {
     if (this.rates.result === "error") {
-      $(".showErrors").text(`There was an error with a type of ${this.rates["error-type"]}`).show();
+      $(".showErrors").text(`There was a problem. The site responded with an ${this.rates["error-type"]} error. For more information please go to https://www.exchangerate-api.com/docs/standard-requests and navigate to 'Standard Endpoint' to find your error.`).show();
       $("#amountAfterConversion").hide();
     } else if ($("#newCurrency").val() === "AUD") {
       let selectedcurrency = this.rates.conversion_rates.AUD;
