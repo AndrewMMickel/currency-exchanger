@@ -26,7 +26,7 @@ export default class currencyConvert {
   }
   getCurrencyValues() {
     if (this.rates.result === "error") {
-      $(".showErrors").text(`There was a problem. The site responded with an ${this.rates["error-type"]} error. For more information please go to https://www.exchangerate-api.com/docs/standard-requests and navigate to 'Standard Endpoint' to find your error.`).show();
+      $(".show-Errors").text(`There was a problem. The site responded with an ${this.rates["error-type"]} error. For more information please go to https://www.exchangerate-api.com/docs/standard-requests and navigate to 'Standard Endpoint' to find your error.`).show();
       $("#amountAfterConversion").hide();
     } else if ($("#newCurrency").val() === "AUD") {
       let selectedcurrency = this.rates.conversion_rates.AUD;

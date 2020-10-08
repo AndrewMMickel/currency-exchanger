@@ -11,10 +11,10 @@ $(document).ready(function () {
     let userInput = $("#conversionAmount").val();
     if (userInput < 0) {
       $("#amountAfterConversion").hide();
-      $(".showErrors").text("Please input a non-negative number").show();
+      $(".show-Errors").text("Please input a non-negative number").show();
       return;
     } else {
-      $(".showErrors").hide();
+      $(".show-Errors").hide();
       conversion.amount = $("#conversionAmount").val();
       let currentRate = await conversion.conversionRate();
 

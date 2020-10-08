@@ -4,13 +4,13 @@ body {
     color: #5c5a57;
   }
   
-  .padthebody {
+  .pad-the-body {
     margin-left: 8%;
     margin-right: 4%;
     text-align: right;
   }
 
-.showErrors {
+.show-Errors {
   background-color:red;
   color: white;
 }
