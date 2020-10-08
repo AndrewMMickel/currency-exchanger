@@ -9,3 +9,8 @@ body {
     margin-right: 4%;
     text-align: right;
   }
+
+.showErrors {
+  background-color:red;
+  color: white;
+}

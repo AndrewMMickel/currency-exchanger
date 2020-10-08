@@ -1,4 +1,4 @@
-import $, { type } from "jquery";
+import $ from "jquery";
 export default class currencyConvert {
   constructor() {
     this.amount = 0;

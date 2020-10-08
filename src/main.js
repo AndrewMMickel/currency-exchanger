@@ -5,7 +5,7 @@ import "./styles.css";
 import currencyConvert from "./c-exchanger.js";
 
 $(document).ready(function () {
-  $(":submit").click(async function (event) {
+  $(":submit").on('click', async function (event) {
     event.preventDefault();
     let conversion = new currencyConvert();
     let userInput = $("#conversionAmount").val();
